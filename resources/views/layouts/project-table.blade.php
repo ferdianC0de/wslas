@@ -60,9 +60,13 @@
                         </span>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{ route('project.show', $project->id) }}">
-                            <img width="200px" height="200px" src="{{ asset('images/galeri/'.$project->gallery) }}" alt="{{ $project->gallery }}">
-                        </a>
+                        {{-- <a href="{{ route('project.show', $project->id) }}"> --}}
+                        <button data-modal-target="projectImageModal"  data-modal-toggle="projectImageModal" onclick="setModalImage('{{ $project->gallery }}', '{{ asset('images/galeri/') }}')">
+                            @php
+                                $images = json_decode($project->gallery);
+                            @endphp
+                            <img width="200px" height="200px" src="{{ asset('images/galeri/'.$images[0]) }}" alt="{{ $images[0] }}">
+                        </button>
                     </td>
                 </tr>
             @endforeach

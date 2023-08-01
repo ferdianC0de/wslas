@@ -50,12 +50,18 @@ class ProjectController extends Controller
         $project = new Project();
 
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $now = Carbon::now();
-            $filename = strtotime($now).".".$image->getClientOriginalExtension();
-            $upload = public_path().'\images\galeri';
-            $image->move($upload, $filename);
-            $project->gallery = $filename;
+            $files = [];
+            foreach ($request->file('image') as $imagefile) {
+                sleep(1);
+                $image = $imagefile;
+                $now = Carbon::now();
+                $filename = strtotime($now).".".$image->getClientOriginalExtension();
+                $upload = public_path().'\images\galeri';
+                $image->move($upload, $filename);
+                array_push($files, $filename);
+            }
+
+            $project->gallery = json_encode($files);
         }
 
         $project->name = $request->name;
@@ -116,12 +122,18 @@ class ProjectController extends Controller
         $project = Project::find($id);
 
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $now = Carbon::now();
-            $filename = strtotime($now).".".$image->getClientOriginalExtension();
-            $upload = public_path().'\images\galeri';
-            $image->move($upload, $filename);
-            $project->gallery = $filename;
+            $files = [];
+            foreach ($request->file('image') as $imagefile) {
+                sleep(1);
+                $image = $imagefile;
+                $now = Carbon::now();
+                $filename = strtotime($now).".".$image->getClientOriginalExtension();
+                $upload = public_path().'\images\galeri';
+                $image->move($upload, $filename);
+                array_push($files, $filename);
+            }
+
+            $project->gallery = json_encode($files);
         }
 
         $project->name = $request->name;

@@ -39,8 +39,7 @@
 
         <div class="mb-6">
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Galeri</label>
-            <input name="image" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="slider_help" id="slider" type="file">
-            {{-- <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">Gunakan gambar dengan ukuran ... x ...</div> --}}
+            <input multiple name="image[]" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="slider_help" id="slider" type="file">
         </div>
 
         <button type="submit" class="mt-8 w-full text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
