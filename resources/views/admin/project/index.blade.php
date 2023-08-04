@@ -58,7 +58,7 @@
                     </button>
                 </div>
                 <!-- Modal body -->
-                <div class="p-6 space-y-6" id="imageModal">
+                <div class="p-6 space-y-6 flex flex-wrap justify-center" id="imageModal">
                     <img width="200px" height="200px" src="{{ asset('images/galeri/1690442379.PNG') }}" alt="1690442379">
                 </div>
                 <!-- Modal footer -->
@@ -199,7 +199,7 @@
                 var html = '';
 
                 images.map(e => {
-                    var imgSrc = '<img width="200px" height="200px" src="'+urlAsset+'/'+e+'" alt="'+e+'">';
+                    var imgSrc = '<img style="margin: 5px;" width="45%" height="auto" src="'+urlAsset+'/'+e+'" alt="'+e+'">';
                     html += imgSrc;
                 });
 
